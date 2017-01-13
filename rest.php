@@ -15,6 +15,8 @@ if ($method=="GET"){
       echo json_encode($myArray);
   }
 }
+
+if ($method=="POST"){
   $gpsname= $_REQUEST['gpsname'];
   $lat= $_REQUEST['lat'];
   $lon= $_REQUEST['lon'];
