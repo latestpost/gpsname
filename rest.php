@@ -17,6 +17,10 @@ if ($method=="GET"){
 }
 
 if ($method=="POST"){
+  foreach (getallheaders() as $name => $value) {
+    echo "$name: $value\n";
+}
+
   $gpsname= $_POST['gpsname'];
   $lat= $_POST['lat'];
   $lon= $_POST['lon'];
