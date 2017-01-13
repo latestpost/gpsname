@@ -4,6 +4,8 @@
  $method = $_SERVER['REQUEST_METHOD'];
 include 'sqlconnect.php';
 
+//**TODO parametries sql
+
 if ($method=="GET"){
   $sql = "SELECT * FROM gpsname";
   $result = $conn->query($sql);
@@ -25,7 +27,7 @@ if ($method=="POST"){
 if ($id != 0) {
   $sql = "update gpsname set gpsname='$gpsname',lat=$lat,lon=$lon where id=$id";
 } else {
-  $sql = "insert into gpsname (gpsname,lat,lon) values ($gpsname,$lat,$lon)";
+  $sql = "insert into gpsname (gpsname,lat,lon) values ('$gpsname',$lat,$lon)";
 }
   $result = $conn->query($sql);
   echo json_encode($sql);
