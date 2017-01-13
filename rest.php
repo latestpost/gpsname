@@ -15,18 +15,10 @@ if ($method=="GET"){
       echo json_encode($myArray);
   }
 }
-
-if ($method=="POST"){
-  foreach (getallheaders() as $name => $value) {
-    echo "$name: $value\n";
-}
-
-print_r($_REQUEST);
-
-  $gpsname= $_POST['gpsname'];
-  $lat= $_POST['lat'];
-  $lon= $_POST['lon'];
-  $id= $_POST['id'];
+  $gpsname= $_REQUEST['gpsname'];
+  $lat= $_REQUEST['lat'];
+  $lon= $_REQUEST['lon'];
+  $id= $_REQUEST['id'];
 
   $sql = "update gpsname set gpsname=$gpsname,lat=$lat,lon=$lon where id=$id";
   $result = $conn->query($sql);
