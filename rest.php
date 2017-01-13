@@ -21,12 +21,14 @@ if ($method=="POST"){
     echo "$name: $value\n";
 }
 
+print_r($_REQUEST);
+
   $gpsname= $_POST['gpsname'];
   $lat= $_POST['lat'];
   $lon= $_POST['lon'];
   $id= $_POST['id'];
 
-  $sql = "update gpsname set lat=$lat,lon=$lon where id=$id";
+  $sql = "update gpsname set gpsname=$gpsname,lat=$lat,lon=$lon where id=$id";
   $result = $conn->query($sql);
   echo $sql;
 }
