@@ -17,7 +17,14 @@ if ($method=="GET"){
 }
 
 if ($method=="POST"){
-  echo json_encode("post");
+  $gpsname= $_REQUEST['gpsname'];
+  $lat= $_REQUEST['lat'];
+  $lon= $_REQUEST['lon'];
+  $id= $_REQUEST['id'];
+
+  $sql = "SELECT gpsname set lat=$lat,lon=$lon where id=$id";
+  $result = $conn->query($sql);
+  echo $sql;
 }
 
 $conn->close();
