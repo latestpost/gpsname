@@ -28,7 +28,7 @@ if ($id != 0) {
   $sql = "insert into gpsname (gpsname,lat,lon) values ($gpsname,$lat,$lon)";
 }
   $result = $conn->query($sql);
-  echo json_encode("ok");
+  echo json_encode($sql);
 }
 
 $conn->close();
