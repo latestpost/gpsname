@@ -22,9 +22,9 @@ if ($method=="POST"){
   $lon= $_REQUEST['lon'];
   $id= $_REQUEST['id'];
 
-  $sql = "update gpsname set gpsname=$gpsname,lat=$lat,lon=$lon where id=$id";
+  $sql = "update gpsname set gpsname='$gpsname',lat=$lat,lon=$lon where id=$id";
   $result = $conn->query($sql);
-  echo $sql;
+  echo json_encode("ok");
 }
 
 $conn->close();
